@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks - Set B (All 20 Tasks)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h2 { color: #333; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+        input, button { margin: 5px; padding: 8px; }
+        #output { margin-top: 20px; padding: 10px; background: #eef; border: 1px solid #ccc; min-height: 50px; }
+        .task { border-bottom: 2px solid #ddd; margin-bottom: 30px; padding-bottom: 20px; }
+        #countdownDisplay { font-size: 2em; color: red; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Tasks - Set B (All 20 Tasks in One Page)</h1>
+    <div id="output"></div>
+
+    <!-- Task 1: Reverse words in a sentence -->
+    <div class="task">
+        <h2>1. Reverse words in a sentence</h2>
+        <input type="text" id="task1Input" placeholder="Enter a sentence">
+        <button onclick="reverseWords()">Reverse Words</button>
+    </div>
+
+    <!-- Task 2: Extract first and last character from a string -->
+    <div class="task">
+        <h2>2. Extract first and last character from a string</h2>
+        <input type="text" id="task2Input" placeholder="Enter a string">
+        <button onclick="firstLastChar()">Get First & Last</button>
+    </div>
+
+    <!-- Task 3: Find longest word from sentence -->
+    <div class="task">
+        <h2>3. Find longest word from sentence</h2>
+        <input type="text" id="task3Input" placeholder="Enter a sentence">
+        <button onclick="longestWord()">Find Longest Word</button>
+    </div>
+
+    <!-- Task 4: Convert string to Title Case -->
+    <div class="task">
+        <h2>4. Convert string to Title Case</h2>
+        <input type="text" id="task4Input" placeholder="enter any sentence">
+        <button onclick="toTitleCase()">To Title Case</button>
+    </div>
+
+    <!-- Task 5: Replace a word in a string -->
+    <div class="task">
+        <h2>5. Replace a word in a string</h2>
+        <input type="text" id="task5Input" placeholder="Enter sentence">
+        <input type="text" id="task5Old" placeholder="Word to replace">
+        <input type="text" id="task5New" placeholder="New word">
+        <button onclick="replaceWord()">Replace</button>
+    </div>
+
+    <!-- Task 6: Count vowels in a string -->
+    <div class="task">
+        <h2>6. Count vowels in a string</h2>
+        <input type="text" id="task6Input" placeholder="Enter a string">
+        <button onclick="countVowels()">Count Vowels</button>
+    </div>
+
+    <!-- Task 7: Create an array from user popup input -->
+    <div class="task">
+        <h2>7. Create an array from user input (comma separated)</h2>
+        <button onclick="createArrayFromPrompt()">Create Array</button>
+    </div>
+
+    <!-- Task 8: Display third element from array -->
+    <div class="task">
+        <h2>8. Display third element from array</h2>
+        <button onclick="displayThirdElement()">Show Third Element</button>
+    </div>
+
+    <!-- Task 9: Find index of a given element in array -->
+    <div class="task">
+        <h2>9. Find index of a given element in array</h2>
+        <input type="text" id="task9Element" placeholder="Element to find">
+        <button onclick="findIndex()">Find Index</button>
+    </div>
+
+    <!-- Task 10: Function to check even/odd -->
+    <div class="task">
+        <h2>10. Check even or odd</h2>
+        <input type="number" id="task10Num" placeholder="Enter a number">
+        <button onclick="checkEvenOdd()">Check</button>
+    </div>
+
+    <!-- Task 11: Function to sum of array values -->
+    <div class="task">
+        <h2>11. Sum of array values</h2>
+        <button onclick="sumArray()">Calculate Sum</button>
+    </div>
+
+    <!-- Task 12: Popup allow only 10 digits input -->
+    <div class="task">
+        <h2>12. Input only 10 digits (phone number)</h2>
+        <button onclick="inputTenDigits()">Enter 10-Digit Number</button>
+    </div>
+
+    <!-- Task 13: Detect numeric vs string and apply operations -->
+    <div class="task">
+        <h2>13. Detect numeric vs string</h2>
+        <input type="text" id="task13Input" placeholder="Enter number or string">
+        <button onclick="detectAndOperate()">Detect & Operate</button>
+    </div>
+
+    <!-- Task 14: Validate password min length rule -->
+    <div class="task">
+        <h2>14. Validate password (min 8 chars)</h2>
+        <input type="password" id="task14Pass" placeholder="Enter password">
+        <button onclick="validatePassword()">Validate</button>
+    </div>
+
+    <!-- Task 15: Validate required field not empty -->
+    <div class="task">
+        <h2>15. Validate required field</h2>
+        <input type="text" id="task15Field" placeholder="This field is required">
+        <button onclick="validateRequired()">Check Required</button>
+    </div>
+
+    <!-- Task 16: Signup form with submit/reset -->
+    <div class="task">
+        <h2>16. Simple Signup Form</h2>
+        <input type="text" id="name" placeholder="Name"><br>
+        <input type="email" id="email" placeholder="Email"><br>
+        <button onclick="submitForm()">Submit</button>
+        <button onclick="resetForm()">Reset</button>
+    </div>
+
+    <!-- Task 17: Display form output in a table format -->
+    <div class="task">
+        <h2>17. Display submitted data in table</h2>
+        <table id="dataTable" border="1" style="width:100%; margin-top:10px;">
+            <thead><tr><th>Name</th><th>Email</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Task 18: Display object after update -->
+    <div class="task">
+        <h2>18. Update and display object</h2>
+        <button onclick="updateAndDisplayObject()">Update & Display Object</button>
+        <pre id="objectDisplay"></pre>
+    </div>
+
+    <!-- Task 19: Countdown timer with Start/Pause/Reset -->
+    <div class="task">
+        <h2>19. Countdown timer (30 seconds)</h2>
+        <div id="countdownDisplay">30</div>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+    </div>
+
+    <!-- Task 20: Hover event - change button style -->
+    <div class="task">
+        <h2>20. Hover to change button style</h2>
+        <button id="hoverBtn" onmouseover="hoverOn(this)" onmouseout="hoverOff(this)">
+            Hover over me!
+        </button>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+        let globalArray = [10, 20, 30, 40, 50]; // Shared array for tasks 8,9,11
+        let timerInterval;
+        let timeLeft = 30;
+
+        function print(msg) {
+            output.innerHTML += msg + '<br>';
+        }
+
+        // Task 1
+        function reverseWords() {
+            const sentence = document.getElementById('task1Input').value;
+            const reversed = sentence.split(' ').reverse().join(' ');
+            print('Reversed words: ' + reversed);
+        }
+
+        // Task 2
+        function firstLastChar() {
+            const str = document.getElementById('task2Input').value;
+            if (str.length < 2) {
+                print('String too short');
+                return;
+            }
+            print(`First: ${str[0]}, Last: ${str[str.length-1]}`);
+        }
+
+        // Task 3
+        function longestWord() {
+            const sentence = document.getElementById('task3Input').value;
+            const words = sentence.split(' ');
+            let longest = '';
+            words.forEach(word => {
+                if (word.length > longest.length) longest = word;
+            });
+            print('Longest word: ' + longest);
+        }
+
+        // Task 4
+        function toTitleCase() {
+            const str = document.getElementById('task4Input').value;
+            const title = str.toLowerCase().split(' ').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+            print('Title Case: ' + title);
+        }
+
+        // Task 5
+        function replaceWord() {
+            let sentence = document.getElementById('task5Input').value;
+            const oldWord = document.getElementById('task5Old').value;
+            const newWord = document.getElementById('task5New').value;
+            const replaced = sentence.replace(new RegExp(oldWord, 'g'), newWord);
+            print('After replace: ' + replaced);
+        }
+
+        // Task 6
+        function countVowels() {
+            const str = document.getElementById('task6Input').value.toLowerCase();
+            const vowels = str.match(/[aeiou]/g) || [];
+            print('Vowel count: ' + vowels.length);
+        }
+
+        // Task 7
+        function createArrayFromPrompt() {
+            const input = prompt('Enter elements separated by comma');
+            if (input) {
+                globalArray = input.split(',').map(item => item.trim());
+                print('Array created: [' + globalArray.join(', ') + ']');
+            }
+        }
+
+        // Task 8
+        function displayThirdElement() {
+            if (globalArray.length >= 3) {
+                print('Third element: ' + globalArray[2]);
+            } else {
+                print('Array has less than 3 elements');
+            }
+        }
+
+        // Task 9
+        function findIndex() {
+            const element = document.getElementById('task9Element').value;
+            const index = globalArray.indexOf(element);
+            print(index !== -1 ? `Index: ${index}` : 'Element not found');
+        }
+
+        // Task 10
+        function checkEvenOdd() {
+            const num = Number(document.getElementById('task10Num').value);
+            print(num % 2 === 0 ? 'Even' : 'Odd');
+        }
+
+        // Task 11
+        function sumArray() {
+            const sum = globalArray.reduce((a, b) => Number(a) + Number(b), 0);
+            print('Sum of array: ' + sum);
+        }
+
+        // Task 12
+        function inputTenDigits() {
+            let num = prompt('Enter a 10-digit number');
+            while (num && num.length !== 10 || isNaN(num)) {
+                num = prompt('Invalid! Please enter exactly 10 digits');
+            }
+            if (num) print('Valid 10-digit number entered');
+        }
+
+        // Task 13
+        function detectAndOperate() {
+            const input = document.getElementById('task13Input').value;
+            if (!isNaN(input) && input !== '') {
+                const num = Number(input);
+                print(`Numeric: Square = ${num * num}`);
+            } else {
+                print(`String: Length = ${input.length}, Uppercase: ${input.toUpperCase()}`);
+            }
+        }
+
+        // Task 14
+        function validatePassword() {
+            const pass = document.getElementById('task14Pass').value;
+            if (pass.length >= 8) {
+                print('Password is valid');
+            } else {
+                print('Password must be at least 8 characters');
+            }
+        }
+
+        // Task 15
+        function validateRequired() {
+            const field = document.getElementById('task15Field').value;
+            if (field.trim() === '') {
+                print('This field is required');
+            } else {
+                print('Field is valid');
+            }
+        }
+
+        // Task 16 & 17
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            if (name && email) {
+                const tbody = document.querySelector('#dataTable tbody');
+                const row = `<tr><td>${name}</td><td>${email}</td></tr>`;
+                tbody.innerHTML += row;
+                print('Form submitted and added to table');
+            } else {
+                print('Please fill both fields');
+            }
+        }
+        function resetForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+        }
+
+        // Task 18
+        let person = { name: 'John', age: 25, city: 'New York' };
+        function updateAndDisplayObject() {
+            person.age += 5;
+            person.city = 'London';
+            document.getElementById('objectDisplay').textContent = JSON.stringify(person, null, 2);
+        }
+
+        // Task 19
+        function updateTimer() {
+            document.getElementById('countdownDisplay').textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                print('Countdown finished!');
+            }
+            timeLeft--;
+        }
+        function startTimer() {
+            if (!timerInterval) {
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+        }
+        function pauseTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
+        function resetTimer() {
+            pauseTimer();
+            timeLeft = 30;
+            document.getElementById('countdownDisplay').textContent = timeLeft;
+        }
+
+        // Task 20
+        function hoverOn(btn) {
+            btn.style.backgroundColor = '#ff4444';
+            btn.style.color = 'white';
+            btn.style.transform = 'scale(1.2)';
+        }
+        function hoverOff(btn) {
+            btn.style.backgroundColor = '';
+            btn.style.color = '';
+            btn.style.transform = '';
+        }
+
+        // Clear output for new session
+        output.innerHTML = '<strong>Output will appear here:</strong><br>';
+    </script>
+
+</body>
+</html>
